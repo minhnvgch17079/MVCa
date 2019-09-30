@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('mvc', 'postgres', '2108', {
+const sequelize = new Sequelize('EnrollmentDB', 'postgres', '2108', {
     host: 'localhost',
     port: 5433,
     dialect: 'postgres',
@@ -11,28 +11,5 @@ const sequelize = new Sequelize('mvc', 'postgres', '2108', {
     }
 })
 
-const Movie = sequelize.define('movies', {
-    ID: {
-        type: Sequelize.INTEGER, 
-        autoIncrement: true,
-        primaryKey: true
-    },
-    Title: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    DateTime: {
-        type: Sequelize.DATE,
-        allowNull: false
-    },
-    Genre: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    Price: {
-        type: Sequelize.DECIMAL,
-        allowNull: false
-    }
-}, {timestamps: false})
-
-module.exports.movie = Movie
+module.exports.S = Sequelize
+module.exports.s = sequelize
